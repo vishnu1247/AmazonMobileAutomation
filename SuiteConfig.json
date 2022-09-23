@@ -1,0 +1,22 @@
+{
+	"apps": [{
+		"name": "Amazon-Android",
+		"appium.version": "1.14.2",
+		"localhost.port": "4723",
+		"app.package": "in.amazon.mShop.android.shopping",
+		"app.activity": "com.amazon.mShop.splashscreen.StartupActivity",
+		"automation.name": "uiautomator2",
+		"screenshot.folder": "screenshot",
+		"environments": [{
+			"name": "QA-Environment"
+			
+		}],
+		"devices": [{
+			"name": "RZ8M840NG3F",
+			"platform.name": "Android",
+			"platform.version": "11",
+			"device.name": "RZ8M840NG3F",
+			"userid.number": "1"
+		}]
+	}]
+}

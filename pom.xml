@@ -1,0 +1,277 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.AmazonMobileAutomation</groupId>
+	<artifactId>AmazonMobileAutomation</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>AmazonMobileAutomation</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<batchsuiteFile>${project.basedir}${file.separator}testing_xml${file.separator}Batch-Regression${file.separator}A2B_Mobile_BatchTests.xml</batchsuiteFile>
+	    <selenium.2.version>2.53.0</selenium.2.version>
+		<selenium.version>3.141.59</selenium.version>
+		<appium.version>7.0.0</appium.version>
+		<selenium.mobile.driver>2.39.0</selenium.mobile.driver>
+		<restassured.version>2.9.0</restassured.version>
+		<winium.version>0.1.0-1</winium.version>
+		<testng.version>6.14.3</testng.version>
+		<junit.version>4.12</junit.version>
+		<extent.version>3.1.5</extent.version>
+		<apache.poi.version>3.17</apache.poi.version>
+		<amazon.version>1.11.306</amazon.version>
+		<log4j.version>1.2.14</log4j.version>
+		<slf4j.version>1.7.25</slf4j.version>
+		<oracle.dbdriver>ojdbc7-12.1.0.2.jar</oracle.dbdriver>
+		<apache.pdfbox.version>2.0.12</apache.pdfbox.version>
+		<apache.httpclient.version>4.5.7</apache.httpclient.version>
+	</properties>
+
+	<dependencies>
+
+	<!-- Selenium dependencies start -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${selenium.version}</version>
+		</dependency>
+		
+<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+<dependency>
+    <groupId>org.mybatis</groupId>
+    <artifactId>mybatis</artifactId>
+    <version>3.0.1</version>
+</dependency>
+
+
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-support</artifactId>
+			<version>${selenium.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>jetty-repacked</artifactId>
+			<version>9.2.13.v20150730</version>
+		</dependency>
+		<!-- Selenium dependencies end -->
+		<!-- Appium dependencies start -->
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>${appium.version}</version>
+		</dependency>
+		<!-- Appium dependencies end -->
+
+		<!-- selenium-mobile-driver's start -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-iphone-driver</artifactId>
+			<version>${selenium.mobile.driver}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-android-driver</artifactId>
+			<version>${selenium.mobile.driver}</version>
+		</dependency>
+		<!-- selenium-mobile-driver's end -->
+
+		
+
+		<dependency>
+			<groupId>com.jayway.restassured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>${restassured.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.8</version>
+		</dependency>
+
+		
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+
+		
+
+		<!-- logger's start :: Start -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<!-- logger's :: End -->
+
+		<!-- Extent Report & TestNG dependencies :: Start -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>${extent.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.10.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.23</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongodb-driver</artifactId>
+			<version>3.6.3</version>
+		</dependency>
+		<!-- Extent Report dependencies :: End -->
+
+		<!-- database connectors :: Start -->
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<version>6.4.0.jre8</version>
+		</dependency>
+		<!-- <dependency> <groupId>oracle</groupId> <artifactId>ojdbc7</artifactId> 
+			<scope>system</scope> <version>12.1.0.2</version> <systemPath>${project.basedir}/commonLibs/${oracle.dbdriver}</systemPath> 
+			</dependency> -->
+		<dependency>
+			<groupId>net.sourceforge.csvjdbc</groupId>
+			<artifactId>csvjdbc</artifactId>
+			<version>1.0.28</version>
+		</dependency>
+		<!-- database connectors :: Start -->
+
+		<!-- Apache POI dependencies :: Start -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${apache.poi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>${apache.poi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-excelant</artifactId>
+			<version>${apache.poi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
+			<version>${apache.poi.version}</version>
+		</dependency>
+		<!-- Apache POI dependencies :: End -->
+
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20180130</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.6</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>3.3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>${apache.pdfbox.version}</version>
+		</dependency>
+
+	   <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+	   <dependency>
+		 <groupId>org.apache.httpcomponents</groupId>
+		 <artifactId>httpclient</artifactId>
+		 <version>${apache.httpclient.version}</version>
+	   </dependency>
+
+
+	</dependencies>
+
+
+	<build>
+		<finalName>AmazonMobileAutomation</finalName>
+		<plugins>
+			<!-- Following plugin executes the testng tests -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>	
+					<suiteXmlFiles>
+						<suiteXmlFile>${batchsuiteFile}</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.0.0</version>
+			</plugin>
+			 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<fork>true</fork>
+					<executable>${JAVA_HOME}/bin/javac</executable>
+					<compilerVersion>1.8</compilerVersion>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>  
+</project>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Amazon Android-Automation" allow-return-values="false">
+    <suite-files>
+         
+         <suite-file path="./testing_xml/AppTests.xml" ></suite-file>
+          
+    </suite-files>
+</suite>   

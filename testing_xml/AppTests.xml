@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Amazon-Mobile" allow-return-values="false">
+	<listeners>
+		<listener class-name="amazon.core.listeners.TestNGListener" />
+	</listeners>
+	
+	<!--  Execution Environment Parameters  -->
+	
+	<parameter name="AppiumVerNo" value="1.14.2" />
+	<parameter name="AppiumServerUrl" value="http://0.0.0.0:4723" />
+	<parameter name="AppUT" value="Amazon-Android" />
+	<parameter name="AppTestEnv" value="QA-Environment" />
+	<parameter name="DeviceUT" value="RZ8M840NG3F" />
+	
+
+	
+	<test name="Amazon Tracking-Mobile: Smoke tests">
+		<classes>
+			<class name="amazon.mobile.AppTest.AmazonAppTests">
+				<methods>
+					<include name="TC01AddToCartAndVerify">
+					<parameter name="testCaseName" value="Add Product to cart and Verify on Check out screen" />
+					</include>		
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>  
